@@ -64,6 +64,35 @@ input:focus, button:focus{
     outline-offset: 1px;
 }
 
+textarea{
+    margin: 30px;
+    width: 300px;
+    height: 200px;
+
+    border-radius: 10px;
+    outline: none;
+    border: rgb(211, 211, 211) 1px solid;
+
+    padding: 20px;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+input[type="radio"]{
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    padding: 2px;
+    margin: 10px;
+
+    font-family: Arial;
+}
+
 
 button{
     border: 1px solid rgb(230, 230, 230);
