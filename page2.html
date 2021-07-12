@@ -9,6 +9,12 @@
 </head>
 <body>
     <div class="form">
+
+        <div style="display: none;" id="confirmacao" class="confirmacao">
+            <h2>Resposta registrada com sucesso!</h2>
+        </div>
+
+
         <div class="texto">
             <h1 class="">
                 Inscreva-se agora!
@@ -17,21 +23,31 @@
                 faça parte da comunidade!
             </h2>
         </div>
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdJF-FN2wXmPaJQlvGXedky_4-gZYS93GJlgrtX-QKFI67FkQ/formResponse">
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdJF-FN2wXmPaJQlvGXedky_4-gZYS93GJlgrtX-QKFI67FkQ/formResponse" target="prox">
             <label for="insta-friend"></label>
             <input type="text" id="insta-friend" placeholder="Seu melhor e-mail" required 
             name="entry.1887591225"><br>
-            <textarea name="entry.1584022118"></textarea><br>
+            <textarea name="entry.1584022118" required></textarea><br>
             <div class="center">
 
                 <label for="sim">sim</label>
-                <input type="radio" name="entry.593886105" id="sim" value="sim">        
+                <input type="radio" name="entry.593886105" id="sim" value="sim" required>        
                 <label for="nao">nao</label>
-                <input type="radio" name="entry.593886105" id="nao"  value="nao">
+                <input type="radio" name="entry.593886105" id="nao"  value="nao" required>
                 <br>       
             </div>
+
             <button>Send</button>
+            <script>
+                var btn = document.querySelector('button')
+                var verification = document.getElementById('confirmacao')
+
+                btn.addEventListener('click', function(){
+                    verification.style.display = 'block'
+                })
+            </script>
         </form>
+        <iframe style="display:none;" name="prox" src="https://docs.google.com/forms/d/e/1FAIpQLSdJF-FN2wXmPaJQlvGXedky_4-gZYS93GJlgrtX-QKFI67FkQ/formResponse?"></iframe>
     </div>    
 </body>
 </html>
