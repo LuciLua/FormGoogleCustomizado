@@ -9,6 +9,12 @@
 </head>
 <body>
     <div class="form">
+        <div><h1 id="notice" style="font-size: 14px; background-color: rgba(88, 225, 104, 0.809); color: #fff; font-family: Arial, Helvetica, sans-serif; font-weight: 700; padding: 14px 20px; border-radius: 12px; margin-bottom: 12px; display: none;">
+            Enviado com sucesso!
+        </h1></div>
+        <div><h1 id="notice-falha" style="font-size: 14px; background-color: rgba(225, 88, 88, 0.809); color: #fff; font-family: Arial, Helvetica, sans-serif; font-weight: 700; padding: 14px 20px; border-radius: 12px; display: none;">
+            Erro ao enviar!
+        </h1></div>
         <div class="texto">
             <h1 class="">
                 Inscreva-se agora!
@@ -17,12 +23,38 @@
                 faça parte da comunidade!
             </h2>
         </div>
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfwbYPWebYtW83yYf6xT_K_Yhm9yF18bxh6LwcRIjgSUMDl5Q/formResponse">
-            <label for="insta-friend"></label>
-            <input type="text" id="insta-friend" placeholder="Seu melhor e-mail" required 
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfwbYPWebYtW83yYf6xT_K_Yhm9yF18bxh6LwcRIjgSUMDl5Q/formResponse" target="prox">
+            <label for="email"></label>
+            <input type="text" id="email" placeholder="Seu melhor e-mail" required 
             name="entry.1597696387">
-            <button>Send</button>
+            <button id="send">Send</button>
         </form>
+        <script>
+            var email  = document.getElementById('email')
+            var btn = document.getElementById('send')
+            var notice = document.getElementById('notice')
+            var noticeF = document.getElementById('notice-falha')
+
+            
+            btn.addEventListener('click', function(){
+                
+                setTimeout(
+                    function(){
+                        if (document.getElementById('email').value == 'luci.lua81@gmail.com'){
+                            noticeF.style.display='block'
+                            setTimeout(function(){noticeF.style.display='none'}, 2000)
+                        } else {
+                            notice.style.display='block'
+                            setTimeout(function(){notice.style.display='none'}, 2000)
+                        }
+                    }, 500
+                )
+                               
+                // noticeF.style.display='block'
+            })
+
+        </script>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfwbYPWebYtW83yYf6xT_K_Yhm9yF18bxh6LwcRIjgSUMDl5Q/formResponse?"  style="display: none;" name="prox"></iframe>
     </div>    
 </body>
 </html>
